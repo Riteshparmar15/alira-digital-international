@@ -1,0 +1,138 @@
+/**
+ * Portfolio listing — Phase 5
+ */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.portfolio-card {
+  display: grid;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.portfolio-card .media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-bg-2);
+}
+
+.portfolio-card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-card .body {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.portfolio-card .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.portfolio-card h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.portfolio-card .tech {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-2);
+}
+
+.notice-panel {
+  margin-bottom: var(--space-7);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary) 8%, white);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.notice-panel h2 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+}
+
+.notice-panel p {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.55;
+}
+
+.soft-archive {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+  background: var(--color-bg-2);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.soft-archive h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+}
+
+.soft-archive p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.soft-archive .cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.soft-archive .cluster a {
+  color: var(--color-primary-ink);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.soft-archive .cluster a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,413 @@
+/**
+ * Alira Digital — Brand System refinements
+ * Additive layer over compiled CSS. Prefer tokens from design-tokens.css.
+ */
+
+/* ---------- Base polish ---------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--f-body);
+  line-height: var(--leading-normal);
+  letter-spacing: 0;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 28%, white);
+  color: var(--color-text);
+}
+
+/* ---------- Focus & accessibility ---------- */
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 10000;
+  transform: translateY(-160%);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--color-text);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: var(--focus-ring);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .loader,
+  .transition,
+  .hero-canvas,
+  [data-magnetic] {
+    animation: none !important;
+  }
+}
+
+/* ---------- Layout helpers ---------- */
+/* Keep existing .wrap behaviour from compiled CSS; add optional modifiers only. */
+.wrap--narrow {
+  max-width: var(--max-narrow);
+}
+
+.wrap--wide {
+  max-width: var(--max-wide);
+}
+
+/* ---------- Typography hierarchy ---------- */
+.display,
+.h1,
+h1.display {
+  font-family: var(--f-display);
+  font-weight: 750;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+.h2 {
+  font-family: var(--f-display);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+.lead,
+.body-l {
+  color: var(--color-text-2);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+  max-width: 58ch;
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-primary-ink);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.accent,
+.green {
+  color: var(--color-primary-ink);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  backdrop-filter: var(--header-blur);
+  -webkit-backdrop-filter: var(--header-blur);
+}
+
+.site-header .nav {
+  gap: var(--space-4);
+}
+
+.site-header .btn,
+.site-header .btn--green {
+  border-radius: var(--radius-md);
+  min-height: 44px;
+}
+
+.logo .logo-brand {
+  height: 34px;
+  width: auto;
+}
+
+/* ---------- Buttons ---------- */
+.btn,
+.btn--green,
+.btn--soft,
+.btn--light {
+  border-radius: var(--radius-md);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn:hover,
+.btn--green:hover,
+.btn--soft:hover,
+.btn--light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:active,
+.btn--green:active,
+.btn--soft:active,
+.btn--light:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-press);
+}
+
+.btn--green {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--green:hover {
+  background: var(--color-primary-ink);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* ---------- Cards / surfaces ---------- */
+.c-card,
+.case,
+.mod,
+.need,
+.form,
+.map-card,
+.qa,
+.ind-card,
+.refer-list li {
+  border-radius: var(--radius-lg);
+}
+
+.c-card,
+.form,
+.map-card {
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Soften heavy neumorphic treatment where present */
+[class*="raise"],
+.neu,
+.soft-card {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ---------- Sections ---------- */
+.pad,
+.pad-sm,
+main > section.pad {
+  padding-block: var(--space-section);
+}
+
+.sec-head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+  max-width: 46rem;
+}
+
+.sec-head .h2 {
+  margin: 0;
+}
+
+/* ---------- Hero calm-down ---------- */
+.hero .display {
+  max-width: 14ch;
+}
+
+.hero .lead {
+  max-width: 42ch;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.hero-tags span,
+.hero-tags a {
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Loader — quieter, brand-aligned ---------- */
+.loader {
+  background: #071416;
+}
+
+.loader .ld-top {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  opacity: 0.78;
+}
+
+.loader .ld-msg {
+  letter-spacing: 0.04em;
+}
+
+.loader .ld-line i {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-soft));
+}
+
+.loader .ld-status i {
+  background: var(--color-primary);
+}
+
+/* ---------- Forms ---------- */
+.field label {
+  font-weight: 600;
+  color: var(--color-text-2);
+}
+
+.field input,
+.field textarea,
+.field select {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  transition:
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.form-out[data-state="error"],
+.form-out.is-error {
+  color: #b42318;
+}
+
+.form-out[data-state="success"],
+.form-out.is-success {
+  color: var(--color-primary-ink);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-secondary);
+}
+
+.site-footer a:hover {
+  color: var(--color-accent-soft);
+}
+
+.foot-sign-line .accent {
+  color: var(--color-primary);
+}
+
+/* ---------- Floating / chrome ---------- */
+.wa-float,
+.whatsapp-float,
+a[aria-label*="WhatsApp"].float,
+.chat-fab {
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Utility primitives for later phases ---------- */
+.stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.stack-lg {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.surface {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.badge-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent) 14%, white);
+  color: var(--color-secondary);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------- Mobile comfort ---------- */
+@media (max-width: 720px) {
+  .btn,
+  .btn--green,
+  .btn--soft,
+  .btn--light {
+    min-height: 46px;
+  }
+
+  .hero .display {
+    max-width: none;
+  }
+}

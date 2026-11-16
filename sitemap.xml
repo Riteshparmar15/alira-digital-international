@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Draft sitemap. Linked from robots.txt only after running scripts/go_live_seo.py -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://aliradigital.com/</loc></url>
+  <url><loc>https://aliradigital.com/services</loc></url>
+  <url><loc>https://aliradigital.com/industries</loc></url>
+  <url><loc>https://aliradigital.com/projects</loc></url>
+  <url><loc>https://aliradigital.com/projects/corporate-websites</loc></url>
+  <url><loc>https://aliradigital.com/pricing</loc></url>
+  <url><loc>https://aliradigital.com/about-us</loc></url>
+  <url><loc>https://aliradigital.com/contact</loc></url>
+  <url><loc>https://aliradigital.com/website-design</loc></url>
+  <url><loc>https://aliradigital.com/faq</loc></url>
+  <url><loc>https://aliradigital.com/areas-we-serve</loc></url>
+  <url><loc>https://aliradigital.com/demos/bright-home-cleaning/</loc></url>
+</urlset>

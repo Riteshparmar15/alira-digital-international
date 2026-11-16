@@ -1,0 +1,347 @@
+/**
+ * Homepage agency layout — Phase 3
+ * Uses design tokens; keeps existing section utilities.
+ */
+
+.hero--agency {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-bg);
+  /* Keep first paint ~viewport so dotted morph + label stay on-screen */
+  min-height: 100svh;
+}
+
+/* Canvas height drives JS shape placement — lock to viewport, not tall copy */
+.hero--agency .hero-canvas {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: 100%;
+  height: 100svh;
+  max-height: 100%;
+}
+
+.hero--agency .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.hero--agency .hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+  min-height: 100svh;
+  padding-top: clamp(88px, 11vh, 120px);
+  padding-bottom: clamp(56px, 8vh, 84px);
+  box-sizing: border-box;
+}
+
+.hero--agency .hero-copy {
+  display: grid;
+  gap: clamp(12px, 1.6vh, 20px);
+  max-width: 36rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Soft wash so dense agency copy stays readable over stray dots */
+.hero--agency .hero-copy::before {
+  content: "";
+  position: absolute;
+  inset: -18px -20px -24px -16px;
+  background: radial-gradient(ellipse 72% 68% at 22% 38%, rgba(242, 243, 247, 0.9), rgba(242, 243, 247, 0.35) 55%, transparent 78%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero--agency .hero-stage {
+  min-height: min(62vh, 560px);
+  pointer-events: none;
+}
+
+.hero--agency .hero-slot {
+  display: none;
+}
+
+/* Morph label: keep original dotted shape switcher visible and clickable */
+.hero--agency .morph-label {
+  display: inline-flex !important;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.hero--agency .btn-row {
+  margin-top: 4px;
+}
+
+.hero--agency .btn-row .btn--soft {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.hero--agency .brand-lockup {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.hero--agency .display {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.4rem, 5.2vw, 4.75rem);
+  line-height: 0.98;
+}
+
+.hero--agency .lead {
+  margin: 0;
+  max-width: 42ch;
+}
+
+.hero--agency .hero-tags {
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .hero--agency {
+    min-height: 0;
+  }
+
+  .hero--agency .hero-canvas {
+    inset: 0;
+    height: 100%;
+    max-height: none;
+  }
+
+  .hero--agency .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: 48px;
+  }
+
+  .hero--agency .display {
+    max-width: none;
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+  }
+
+  .hero--agency .hero-stage {
+    display: none;
+  }
+
+  /* Reserves space where the original canvas anchors the dotted shape */
+  .hero--agency .hero-slot {
+    display: block;
+    width: min(86vw, 380px);
+    height: min(62vw, 320px);
+    margin: 16px auto 12px;
+  }
+
+  .hero--agency .morph-label {
+    max-width: calc(100vw - 32px);
+  }
+
+  .hero--agency .hero-copy::before {
+    inset: -14px -12px -8px -12px;
+    background: linear-gradient(180deg, rgba(242, 243, 247, 0.96) 0%, rgba(242, 243, 247, 0.85) 62%, rgba(242, 243, 247, 0.1) 100%);
+  }
+}
+
+.agency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.agency-card {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+
+.agency-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.agency-card .n {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-ink);
+}
+
+.agency-card h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.agency-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.agency-card a {
+  font-weight: 650;
+  color: var(--color-primary-ink);
+  text-decoration: none;
+}
+
+.agency-card a:hover {
+  text-decoration: underline;
+}
+
+.price-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.price-card {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.price-card.is-featured {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+  box-shadow: var(--shadow-md);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 8%, white), white);
+}
+
+.price-card .plan {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-ink);
+}
+
+.price-card .amount {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.price-card .amount small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.price-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.price-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--color-text-2);
+  font-size: 0.95rem;
+}
+
+.price-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+  counter-reset: step;
+}
+
+.process-steps article {
+  display: grid;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.process-steps .step-n {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-ink);
+}
+
+.process-steps h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.process-steps p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.industry-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.industry-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color var(--duration) var(--ease), transform var(--duration-fast) var(--ease);
+}
+
+.industry-pills a:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-border));
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px) {
+  .agency-grid,
+  .price-preview,
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .agency-grid,
+  .price-preview,
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}

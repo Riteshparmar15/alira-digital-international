@@ -1,0 +1,393 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];var isRel=(nav&&nav.type==='reload')||(performance.navigation&&performance.navigation.type===1);if(isRel){sessionStorage.removeItem('pd-seen');if(window.location.pathname!=='/'&&window.location.pathname!=='/index.html'){window.location.replace('/');return}}if(sessionStorage.getItem('pd-seen'))r.classList.add('no-loader');var t=sessionStorage.getItem('pd-trans');if(t){r.classList.add('is-entering');window.__pdTrans=t;sessionStorage.removeItem('pd-trans')}}catch(e){}})()</script>
+<title>Multi-Agent RFQ &amp; Operations Copilot: Meridian Case Study | Alira Digital</title>
+<meta name="description" content="How Alira Digital engineered a multi-agent AI RFQ and operations copilot for Meridian Industrial Supply across Mumbai and Singapore: PDF BOQ extraction, private RAG SKU matching, live ERP stock checks, and human-in-the-loop approvals.">
+<link rel="canonical" href="/projects/ai-operations-copilot">
+<link rel="alternate" hreflang="en" href="/projects/ai-operations-copilot">
+<link rel="alternate" hreflang="x-default" href="/projects/ai-operations-copilot">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Alira Digital">
+<meta name="geo.region" content="IN-GJ">
+<meta name="geo.placename" content="Vadodara, Gujarat, India">
+<meta name="geo.position" content="22.3072;73.1812">
+<meta name="ICBM" content="22.3072, 73.1812">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alira Digital">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Multi-Agent RFQ &amp; Operations Copilot: Meridian Case Study | Alira Digital">
+<meta property="og:description" content="Multi-agent AI system automating PDF BOQ extraction, private RAG SKU matching, live ERP stock queries and quote approvals across Mumbai and Singapore.">
+<meta property="og:url" content="/projects/ai-operations-copilot">
+<meta property="og:image" content="/assets/img/ai-copilot-dash.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:width" content="1540">
+<meta property="og:image:height" content="940">
+<meta property="og:image:alt" content="Meridian AI Copilot dashboard engineered by Alira Digital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Multi-Agent RFQ &amp; Operations Copilot: Meridian Case Study | Alira Digital">
+<meta name="twitter:description" content="Multi-agent AI system automating PDF BOQ extraction, private RAG SKU matching, live ERP stock queries and quote approvals across Mumbai and Singapore.">
+<meta name="twitter:image" content="/assets/img/ai-copilot-dash.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"/#org","name":"Alira Digital","alternateName":"Alira Digital Web & System Solutions","legalName":"Alira Digital Web & System Solutions","foundingDate":"2024","url":"/","logo":"/assets/img/alira-pro-1-dark.svg","description":"Alira Digital is a software house in Vadodara, Gujarat, India that builds custom ERP systems, online platforms, mobile apps, corporate websites and AI agents.","slogan":"Your digital transformation partner","telephone":"+91 9313512434","email":"info.aliradigital@gmail.com","priceRange":"Quoted per project","address":{"@type":"PostalAddress","streetAddress":"Vadodara","addressLocality":"Vadodara","addressRegion":"Gujarat","postalCode":"390007","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":22.3072,"longitude":73.1812},"founder":{"@id":"/about-us#ritesh"}},{"@type":"WebSite","@id":"/#website","url":"/","name":"Alira Digital","inLanguage":"en","publisher":{"@id":"/#org"}},{"@type":"WebPage","@id":"/projects/ai-operations-copilot#webpage","url":"/projects/ai-operations-copilot","name":"Multi-Agent RFQ & Operations Copilot: Meridian Case Study | Alira Digital","description":"Multi-agent AI system automating PDF BOQ extraction, private RAG SKU matching, live ERP stock queries and quote approvals across Mumbai and Singapore.","inLanguage":"en","isPartOf":{"@id":"/#website"},"about":{"@id":"/#org"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"Projects","item":"/projects"},{"@type":"ListItem","position":3,"name":"Meridian AI Copilot","item":"/projects/ai-operations-copilot"}]}},{"@type":"CreativeWork","@id":"/projects/ai-operations-copilot#case","name":"Meridian Industrial Supply: Multi-Agent RFQ & Operations Copilot","headline":"140+ daily tender RFQs drafted in 6 minutes instead of 4 hours.","description":"Alira Digital engineered a multi-agent AI operations copilot for Meridian Industrial Supply across Mumbai and Singapore. The system reads email and WhatsApp RFQs, parses PDF BOQ tables, matches 18,420 catalog SKUs via private RAG, queries dual-warehouse ERP stock, and routes quotes through a human approval gate.","url":"/projects/ai-operations-copilot","inLanguage":"en","image":["/assets/img/ai-copilot-dash.webp","/assets/img/ai-rfq-extraction.webp","/assets/img/ai-approval-flow.webp","/assets/img/ai-agent-evals.webp"],"creator":{"@id":"/#org"},"publisher":{"@id":"/#org"},"about":[{"@type":"Service","name":"AI Agents & Automation","url":"/ai-agents-automation"}],"genre":"Case study","isPartOf":{"@id":"/projects#webpage"},"mainEntityOfPage":{"@id":"/projects/ai-operations-copilot#webpage"}},{"@type":"FAQPage","@id":"/projects/ai-operations-copilot#faq","mainEntity":[{"@type":"Question","name":"How accurate is the AI BOQ extraction and SKU matching?","acceptedAnswer":{"@type":"Answer","text":"Across 120 nightly benchmark RFQs and live production runs, the hybrid BM25 + vector RAG pipeline achieves 98.4% exact or semantic SKU match accuracy, with low-confidence line items automatically highlighted in amber for engineer sign-off."}},{"@type":"Question","name":"Can the agent send incorrect pricing or discounts automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Unit prices and minimum margin floors (18%+) are enforced deterministically from the ERP database, and any quotation above SGD 25,000 or containing a flagged substitution is held at the Approval Gate until a manager clicks Approve."}},{"@type":"Question","name":"Does this replace the sales engineering team?","acceptedAnswer":{"@type":"Answer","text":"It eliminates repetitive PDF re-keying and spreadsheet lookups—cutting quote preparation from 4.2 hours to 6.2 minutes—so engineers focus on complex specs, client negotiations and closing tenders."}}]}]}</script>
+<meta name="theme-color" content="#F2F3F7">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=2">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" href="/assets/img/favicon-32x32.png?v=2" type="image/png" sizes="32x32">
+<link rel="icon" href="/assets/img/favicon-192.png?v=2" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+
+<link rel="preload" as="style" href="/build/assets/app-BTeufEwW.css" />
+<link rel="preload" as="style" href="/build/assets/work-CwfcuvAt.css" />
+<link rel="modulepreload" as="script" href="/build/assets/app-BNHGzqmf.js" />
+<link rel="modulepreload" as="script" href="/build/assets/work-CmEh0fbb.js" />
+<link rel="stylesheet" href="/build/assets/app-BTeufEwW.css" />
+<link rel="stylesheet" href="/build/assets/work-CwfcuvAt.css" />
+<script type="module" src="/build/assets/app-BNHGzqmf.js"></script>
+<script type="module" src="/build/assets/work-CmEh0fbb.js"></script>
+
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/css/design-tokens.css">
+<link rel="stylesheet" href="/assets/css/brand-system.css">
+<script src="/local-demo.js?v=9"></script>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<div class="loader" aria-hidden="true">
+  <canvas class="ld-cv"></canvas>
+  <div class="ld-ui">
+    <div class="ld-top"><span>Alira Digital</span><span>Web &amp; System Solutions</span><span class="ld-hide-s">Vadodara, Gujarat · India</span></div>
+    <div class="ld-bottom">
+      <div class="ld-count"><span class="ld-num">000</span><small>%</small></div>
+      <div class="ld-status"><i></i><span class="ld-msg">Collecting scattered data</span></div>
+    </div>
+    <div class="ld-line"><i></i></div>
+  </div>
+</div>
+<div class="transition" aria-hidden="true"></div>
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="/" aria-label="Alira Digital home"><img class="logo-brand" src="/assets/img/alira-pro-1-dark.svg" alt="Alira Digital" width="200" height="48" style="height:34px;width:auto;display:block;margin:0"></a>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/industries">Industries</a></li>
+        <li><a href="/projects" aria-current="page">Work</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/about-us">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--green" href="/contact" data-magnetic>Get a Free Quote <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+  </nav>
+</header>
+<div class="mobile-menu" id="mobileMenu" data-lenis-prevent>
+    <ul>
+      <li><a class="mm-link" href="/"><small>01</small>Home</a></li>
+      <li><a class="mm-link" href="/services"><small>02</small>Services</a></li>
+      <li><a class="mm-link" href="/industries"><small>03</small>Industries</a></li>
+      <li><a class="mm-link" href="/projects"><small>04</small>Work</a></li>
+      <li><a class="mm-link" href="/pricing"><small>05</small>Pricing</a></li>
+      <li><a class="mm-link" href="/about-us"><small>06</small>About</a></li>
+      <li><a class="mm-link" href="/contact"><small>07</small>Contact</a></li>
+    </ul>
+    <div class="mm-foot">
+      <span>Website Design &amp; Development · International clients</span>
+      <a href="https://wa.me/919313512434" target="_blank" rel="noopener">+91 9313512434</a>
+      <span>info.aliradigital@gmail.com</span>
+      <div class="foot-social"><a class="fs-wa" href="https://wa.me/919313512434" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a></div>
+    </div>
+  </div>
+  </div>
+</div>
+<main class="cs cs--ai" style="--acc:#0EA5E9;--acc2:#E0F2FE;--accd:#0C4A6E">
+
+<section class="cs-hero">
+  <div class="cs-hero-bg" aria-hidden="true"><span class="cs-glow"></span><span class="cs-ring"></span></div>
+  <div class="wrap">
+    <div class="crumbs" data-hero><a href="/">Home</a> · <a href="/projects">Projects</a> · Meridian AI Copilot</div>
+    <div class="cs-hero-row">
+      <div>
+        <p class="cs-client" data-hero><b></b>Meridian Industrial Supply<span>AI Agents &amp; ERP Integration · Mumbai &amp; Singapore</span></p>
+        <h1 class="h1 cs-h1" data-hero-split>140+ daily tender RFQs drafted in 6 minutes instead of 4 hours.</h1>
+      </div>
+      <p class="lead" data-hero>A multi-agent AI operations copilot wired into email, WhatsApp Business and a dual-warehouse ERP—parsing scanned PDF BOQs, matching 18,420 catalog SKUs via private RAG, and holding high-value quotes for 1-click sign-off.</p>
+    </div>
+    <dl class="cs-meta" data-hero><div><dt>Client</dt><dd>Meridian Industrial Supply</dd></div><div><dt>Industry</dt><dd>Industrial valves, flanges &amp; piping</dd></div><div><dt>Markets</dt><dd>Mumbai (India) &amp; Singapore</dd></div><div><dt>We built</dt><dd>Multi-agent RFQ &amp; RAG copilot</dd></div></dl>
+  </div>
+  <div class="cs-stage cs-stage--browser" data-cs-stage>
+    <div class="cs-stage-in"><div class="bw bw--hero"><div class="bw-bar"><i></i><i></i><i></i><span>Meridian Copilot · Multi-Agent RFQ Command Center</span></div><div class="bw-screen"><img src="/assets/img/ai-copilot-dash.webp" alt="Meridian AI Copilot command center dashboard" fetchpriority="high" width="1540" height="940"></div></div><span class="cs-float cs-float--0" data-float-in><b>98.4% Match</b><small>18,420 SKUs indexed</small></span><span class="cs-float cs-float--1" data-float-in><b>6.2 min</b><small>Down from 4.2 hrs</small></span><span class="cs-float cs-float--2" data-float-in><b>Approval Gate</b><small>Margin &ge; 18% verified</small></span></div>
+  </div>
+</section>
+
+<section class="pad-sm cs-short-sec">
+  <div class="wrap">
+    <div class="cs-short" data-reveal>
+      <span class="eyebrow">In short</span>
+      <p data-highlight>Alira Digital designed and deployed a multi-agent AI operations copilot for Meridian Industrial Supply, a B2B distributor of process valves, flanges and industrial piping operating across Mumbai and Singapore. Incoming tender emails, WhatsApp enquiries and multi-page scanned PDF Bills of Quantities (BOQs) are automatically parsed, matched against 18,420 internal ERP SKUs using private hybrid RAG, checked against live dual-warehouse stock, and routed through deterministic pricing guardrails and human approval gates.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad cs-before">
+  <div class="wrap cs-before-grid">
+    <div class="cs-before-copy">
+      <span class="eyebrow">Before</span>
+      <h2 class="h2" data-split>Every tender BOQ was keyed in by hand across PDFs, WhatsApp and Excel.</h2>
+      <p class="body-l">Sales engineers received 140+ enquiries a day—some as 30-line scanned PDF tables, others as WhatsApp messages asking for Singapore vs. Mumbai stock. Each line had to be translated from customer wording into internal SKU codes, looked up across four Excel tabs, and typed into the ERP.</p>
+      <ul class="pains"><li><span class="x" aria-hidden="true"></span>89+ unread tender emails waiting in a shared sales inbox</li><li><span class="x" aria-hidden="true"></span>35 to 45 minutes per RFQ converting non-standard PDF descriptions</li><li><span class="x" aria-hidden="true"></span>Manual WhatsApp pings to check Mumbai vs. Singapore warehouse stock</li><li><span class="x" aria-hidden="true"></span>Copy-paste FX and margin mistakes on urgent multi-currency quotes</li></ul>
+      <p class="pile-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Client identities and reference numbers are blurred to protect customer confidentiality.</p>
+    </div>
+    <div class="pile pile--one" data-pile><figure class="pile-it" style="--r:-3deg;--x:0%;--y:4%;--z:0" data-cursor="Zoom"><img src="/assets/img/ai-before-rfq.webp" alt="Before: shared RFQ inbox, WhatsApp follow-ups, scanned BOQ PDF and manual Excel lookup" loading="lazy" data-zoom width="1600" height="900"><figcaption>Shared inbox, WhatsApp chases, scanned BOQs &amp; manual Excel lookup</figcaption></figure><span class="pile-tag">Before the AI agent pipeline</span></div>
+  </div>
+</section>
+
+<section class="cs-story pad" data-story>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Walkthrough</span>
+      <h2 class="h2" data-split>Inside the multi-agent system.</h2>
+      <p class="body-l">Scroll through the screens Meridian's engineering and management teams use every day. The highlight shows what each agent handles automatically.</p>
+    </div>
+    <div class="story-grid story-grid--browser">
+      <div class="story-steps">
+        <article class="st" data-st="0">
+          <span class="st-n">01<i>/04</i></span>
+          <h3 class="h3">Every channel triaged in one Command Center</h3>
+          <p>The Intake Agent monitors Outlook, Gmail, the buyer portal and WhatsApp Business API—extracting tender deadlines, item counts and real-time pipeline stages in seconds.</p>
+          <ul class="st-tags"><li>Intake Agent</li><li>Multi-Channel</li></ul>
+          <figure class="st-img"><img src="/assets/img/ai-copilot-dash.webp" alt="Command Center showing live RFQ agent pipeline" loading="lazy" data-zoom width="1540" height="940"></figure>
+        </article>
+        <article class="st" data-st="1">
+          <span class="st-n">02<i>/04</i></span>
+          <h3 class="h3">Scanned PDF BOQs matched to exact ERP SKUs</h3>
+          <p>Vision-OCR parses complex valve and flange specifications side-by-side against the PDF, querying private pgvector RAG across 18,420 SKUs and flagging low-confidence matches in amber.</p>
+          <ul class="st-tags"><li>Vision-OCR</li><li>Private Catalog RAG</li></ul>
+          <figure class="st-img"><img src="/assets/img/ai-rfq-extraction.webp" alt="Side-by-side PDF BOQ extraction and ERP SKU matching" loading="lazy" data-zoom width="1540" height="940"></figure>
+        </article>
+        <article class="st" data-st="2">
+          <span class="st-n">03<i>/04</i></span>
+          <h3 class="h3">Guarded quotation drafts with 1-click sign-off</h3>
+          <p>Pricing and margin floors come strictly from the ERP database—never AI guesses. Quotes above SGD 25,000 pause at the Approval Gate with full stock allocation reasoning.</p>
+          <ul class="st-tags"><li>Approval Gate</li><li>Margin Guardrails</li></ul>
+          <figure class="st-img"><img src="/assets/img/ai-approval-flow.webp" alt="Human-in-the-loop quotation approval gate and reasoning summary" loading="lazy" data-zoom width="1540" height="940"></figure>
+        </article>
+        <article class="st" data-st="3">
+          <span class="st-n">04<i>/04</i></span>
+          <h3 class="h3">Full execution trace &amp; automated nightly evals</h3>
+          <p>Every tool call, token cost ($0.041/RFQ), latency millisecond and human override is logged—backed by a 120-case nightly regression suite ensuring zero SKU hallucination.</p>
+          <ul class="st-tags"><li>Audit Trail</li><li>120/120 Evals</li></ul>
+          <figure class="st-img"><img src="/assets/img/ai-agent-evals.webp" alt="Agent execution trace and automated evaluation benchmarks" loading="lazy" data-zoom width="1540" height="940"></figure>
+        </article>
+      </div>
+      <div class="story-dev">
+        <div class="story-sticky">
+          <div class="dv dv--browser"><div class="bw-bar"><i></i><i></i><i></i><span>Meridian Copilot</span></div><div class="dv-screen">
+            <figure class="dv-shot is-on" data-shot="0"><img src="/assets/img/ai-copilot-dash.webp" alt="Command Center live RFQ pipeline" loading="lazy"><span class="dv-spot" style="left:18%;top:32%;width:47%;height:34%"><em>Live multi-agent RFQ queue</em></span></figure>
+            <figure class="dv-shot" data-shot="1"><img src="/assets/img/ai-rfq-extraction.webp" alt="BOQ PDF extraction and SKU matching" loading="lazy"><span class="dv-spot" style="left:50%;top:37.5%;width:47%;height:8%"><em>Low-confidence row flagged for review</em></span></figure>
+            <figure class="dv-shot" data-shot="2"><img src="/assets/img/ai-approval-flow.webp" alt="Approval gate and margin check" loading="lazy"><span class="dv-spot" style="left:64.5%;top:16.5%;width:33%;height:11.5%"><em>Margin floor &amp; policy verified</em></span></figure>
+            <figure class="dv-shot" data-shot="3"><img src="/assets/img/ai-agent-evals.webp" alt="Agent trace and eval benchmarks" loading="lazy"><span class="dv-spot" style="left:17%;top:25%;width:46%;height:72%"><em>Deterministic tool-call trace</em></span></figure>
+          </div></div>
+          <div class="dv-ui"><div class="dv-dots" role="group" aria-label="Walkthrough steps"><button type="button" class="dv-dot is-on" data-go="0" aria-label="Go to step 1"></button><button type="button" class="dv-dot" data-go="1" aria-label="Go to step 2"></button><button type="button" class="dv-dot" data-go="2" aria-label="Go to step 3"></button><button type="button" class="dv-dot" data-go="3" aria-label="Go to step 4"></button></div><div class="dv-bar"><i></i></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Before / after</span>
+      <h2 class="h2" data-split>Same enquiries. Four hours faster.</h2>
+      <p class="body-l">Drag the handle to compare Meridian's manual inbox, PDF and Excel workflow against the AI Copilot Command Center.</p>
+    </div>
+    <div class="compare" data-clip data-cursor="Drag">
+      <img src="/assets/img/ai-before-rfq.webp" alt="Before: manual RFQ inbox, WhatsApp chases and Excel sheet" loading="lazy" width="1600" height="900">
+      <div class="after-wrap"><img src="/assets/img/ai-copilot-dash.webp" alt="After: Meridian AI Operations Command Center" loading="lazy" width="1540" height="940"></div>
+      <span class="lbl b">Before</span><span class="lbl a">After</span>
+      <div class="handle"><span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    </div>
+    <p class="compare-hint">Drag to compare · manual PDFs &amp; inbox → autonomous AI copilot</p>
+  </div>
+</section>
+
+<section class="pad cs-mods">
+  <div class="dark-dots"></div>
+  <div class="wrap" style="position:relative">
+    <div class="sec-head">
+      <span class="eyebrow">Architecture</span>
+      <h2 class="h2" data-split>What the multi-agent platform covers.</h2>
+      <p class="body-l">Built as a deterministic state graph with scoped ERP permissions, private retrieval and strict schema contracts at every handoff.</p>
+    </div>
+    <div class="mods">
+      <article class="mod" data-reveal><span class="mod-n">01</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><h3 class="h4">Omnichannel Intake Agent</h3><p>Ingests Outlook, Gmail and WhatsApp RFQs, classifying urgency and customer tier automatically.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">02</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><h3 class="h4">Vision-OCR BOQ Parser</h3><p>Extracts multi-page valve, flange and piping tables into Pydantic-validated JSON rows.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">03</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><h3 class="h4">Private Catalog RAG</h3><p>Hybrid BM25 + pgvector search across 18,420 SKUs and engineering spec sheets with citations.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">04</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9"/></svg></span><h3 class="h4">Dual-Hub ERP Stock Tool</h3><p>Queries live Mumbai and Singapore inventory and computes air/sea split-dispatch plans.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">05</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><h3 class="h4">Deterministic Pricing Engine</h3><p>Applies customer tier rules, live INR/SGD/USD FX rates and 18% minimum margin floors.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">06</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8.5 12 2.3 2.3L15.5 9.5"/></svg></span><h3 class="h4">Approval Gate Console</h3><p>Holds high-value quotes or low-confidence items for 30-second human verification and dispatch.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">07</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><h3 class="h4">WhatsApp Dispatch &amp; Follow-Up</h3><p>Sends branded PDF quotes with MTC 3.1 certificates and logs customer confirmations back to CRM.</p></article>
+      <article class="mod" data-reveal><span class="mod-n">08</span><span class="mod-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3 class="h4">Trace &amp; Eval Observability</h3><p>Tracks run latency, token cost per quote, human edits and 120 nightly safety benchmarks.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Outcome</span>
+      <h2 class="h2" data-split>What changed.</h2>
+    </div>
+    <div class="chg chg--strike">
+      <div class="chg-head"><span>Before</span><span></span><span>After</span></div>
+      <div class="chg-row" data-chg><p class="chg-b"><span>4.2 hours average turnaround on multi-line tender quotes</span></p><span class="chg-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="chg-a">6.2 minutes end-to-end from PDF arrival to approved quote</p></div>
+      <div class="chg-row" data-chg><p class="chg-b"><span>Manual lookup across 18,420 catalog SKUs and Excel tabs</span></p><span class="chg-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="chg-a">98.4% automated SKU match via private pgvector RAG</p></div>
+      <div class="chg-row" data-chg><p class="chg-b"><span>WhatsApp chases between Mumbai and Singapore warehouses</span></p><span class="chg-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="chg-a">Live dual-hub ERP stock check and split-freight plan in 92 ms</p></div>
+      <div class="chg-row" data-chg><p class="chg-b"><span>Occasional manual FX and discount errors on urgent quotes</span></p><span class="chg-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="chg-a">100% deterministic margin floor (&ge; 18%) and 1-click sign-off</p></div>
+      <div class="chg-row" data-chg><p class="chg-b"><span>Enquiries missed after office hours across timezones</span></p><span class="chg-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="chg-a">24/7 autonomous triage drafting 140+ quotes per day at $0.04/RFQ</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm cs-gal">
+  <div class="wrap">
+    <div class="cs-gal-head"><span class="eyebrow">More screens</span><p class="muted"><span class="hint-drag">Swipe or drag to scroll · </span>tap a screen to enlarge</p></div>
+  </div>
+  <div class="strip" aria-label="More screens, drag to scroll" data-cursor="Drag">
+    <div class="strip-track">
+      <figure><div class="shot" data-cursor="Zoom"><img src="/assets/img/ai-copilot-dash.webp" alt="Command Center RFQ pipeline" loading="lazy" data-zoom width="1540" height="940"></div><figcaption>Command Center: live RFQ pipeline &amp; activity trace</figcaption></figure>
+      <figure><div class="shot" data-cursor="Zoom"><img src="/assets/img/ai-rfq-extraction.webp" alt="BOQ PDF extraction and ERP SKU matching" loading="lazy" data-zoom width="1540" height="940"></div><figcaption>PDF BOQ extraction &amp; semantic SKU confidence</figcaption></figure>
+      <figure><div class="shot" data-cursor="Zoom"><img src="/assets/img/ai-approval-flow.webp" alt="Human-in-the-loop approval gate" loading="lazy" data-zoom width="1540" height="940"></div><figcaption>Human approval gate &amp; stock allocation plan</figcaption></figure>
+      <figure><div class="shot" data-cursor="Zoom"><img src="/assets/img/ai-agent-evals.webp" alt="Agent trace and eval benchmarks" loading="lazy" data-zoom width="1540" height="940"></div><figcaption>Execution trace observability &amp; nightly evals</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pad cs-proc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How we built it</span>
+      <h2 class="h2" data-split>Same discipline, built for AI reliability.</h2>
+      <p class="body-l">Every AI system starts by benchmarking your real historical documents before writing agent prompts. <a class="link-arrow" href="/ai-agents-automation#process">See our 7-step AI build process <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+    <ol class="prs" data-prs><span class="prs-line" aria-hidden="true"><i></i></span><li class="pr" data-reveal><span class="pr-dot"><i>1</i></span><h3 class="h4">Document &amp; ERP audit</h3><p>Analysed 120 past PDF BOQs, WhatsApp threads and pricing margin rules across Mumbai &amp; SG.</p></li><li class="pr" data-reveal><span class="pr-dot"><i>2</i></span><h3 class="h4">RAG &amp; guardrail design</h3><p>Indexed 18,420 SKUs into pgvector and locked deterministic ERP pricing and approval boundaries.</p></li><li class="pr" data-reveal><span class="pr-dot"><i>3</i></span><h3 class="h4">Shadow evals &amp; UI</h3><p>Ran the multi-agent graph in shadow mode until extraction hit 98.4% match accuracy with zero hallucinated SKUs.</p></li><li class="pr" data-reveal><span class="pr-dot"><i>4</i></span><h3 class="h4">Launch &amp; monitoring</h3><p>Trained sales engineers on the Approval Console and enabled continuous nightly eval telemetry.</p></li></ol>
+    <div class="svc-links">
+      <a class="svc-link" href="/ai-agents-automation" data-glow><span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="9" y="14" width="6" height="6" rx="1.5"/><path d="M10 7h4M7 10v2.5a2 2 0 0 0 2 2M17 10v2.5a2 2 0 0 1-2 2"/></svg></span><span class="svc-txt"><small>The service behind this project</small><b>AI Agents &amp; Automation</b><em>Autonomous workflows &amp; AI copilots</em></span><span class="svc-cta">Explore the service <span class="svc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></a>
+      <a class="svc-link" href="/custom-erp-system" data-glow><span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></svg></span><span class="svc-txt"><small>Connected to their core system</small><b>Business &amp; ERP System</b><em>Inventory, quoting and order sync</em></span><span class="svc-cta">Explore the service <span class="svc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <span class="eyebrow">Questions</span>
+      <h2 class="h2" id="faq-title" data-split>About this AI project.</h2>
+      <p class="muted" style="margin:0">Want a similar AI agent connected to your ERP, email or WhatsApp? Tell Ritesh how your workflow runs today at +91 9313512434.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>How accurate is the AI BOQ extraction and SKU matching?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Across 120 nightly benchmark RFQs and live production runs, the hybrid BM25 + pgvector RAG pipeline achieves 98.4% exact or semantic SKU match accuracy, automatically highlighting any uncertain substitution in amber for engineer confirmation.</p></div></details>
+      <details><summary>Can the agent send incorrect pricing or discounts automatically?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>No. Prices, tier discounts and the 18% minimum margin floor are enforced deterministically by querying the ERP database—never guessed by an LLM. Any quote over SGD 25,000 or with flagged items waits at the Approval Gate until a manager approves.</p></div></details>
+      <details><summary>Does this replace the sales engineering team?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>It eliminates repetitive PDF re-keying and multi-tab spreadsheet checks—cutting quote turnaround from 4.2 hours to 6.2 minutes—so engineers spend their time on technical specifications, negotiation and closing tenders.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm cs-next">
+  <div class="wrap">
+    <a class="np" href="/projects/fitcom-gym-app" style="--nacc:#F28C28" data-cursor="Open">
+      <span class="np-k"><span class="eyebrow">Next project</span><span class="np-c">Online Platform + Mobile App · India</span></span>
+      <span class="np-t">Fitcom Fitness</span>
+      <span class="np-img"><img src="/assets/img/fitcom-hero.webp" alt="Fitcom Fitness GYM Member System" loading="lazy"></span>
+      <span class="np-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+    <div class="np-row"><a href="/projects/waste-management-erp" class="np-mini"><img src="/assets/img/waste-inventory.webp" alt="" loading="lazy"><span>Apex Enviro Solutions<small>Industrial ERP System</small></span></a><a href="/projects/travel-agency-erp" class="np-mini"><img src="/assets/img/travel-dash.webp" alt="" loading="lazy"><span>Voyage Global Tours<small>Cross-Border Travel ERP</small></span></a><a class="np-all" href="/projects">All projects <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="cta" data-scale-in>
+      <div class="cta-orb" data-float="40"></div>
+      <div class="dark-dots"></div>
+      <div class="cta-row">
+        <div style="display:grid;gap:26px">
+          <span class="eyebrow">Let's talk</span>
+          <h2 data-split>Ready to put AI agents to work in your business?</h2>
+          <div class="btn-row">
+            <a class="btn btn--green" href="/contact" data-magnetic>Let's talk <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+            <a class="btn btn--light" href="https://wa.me/919313512434" target="_blank" rel="noopener" data-magnetic>WhatsApp Now <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+          </div>
+        </div>
+        <div class="contact-lines">
+          <span>+91 9313512434</span>
+          <span>info.aliradigital@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="dark-dots"></div>
+  <svg class="foot-mark" viewBox="22 14 222 284" aria-hidden="true"><path d="M219.94 125.04A107 107 0 1 1 153.38 81.16A41 41 0 0 0 219.94 125.04Z"/><circle cx="132" cy="186" r="46"/><circle cx="192" cy="95" r="31"/><circle class="d1" cx="174" cy="36" r="18"/><circle class="d2" cx="215" cy="44" r="8"/></svg>
+  <div class="wrap" style="position:relative">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="/" aria-label="Alira Digital home"><img class="logo-brand" src="/assets/img/alira-pro-1-light.svg" alt="Alira Digital" width="200" height="48" style="height:42px;width:auto;display:block;margin:0"></a>
+        <p>Web &amp; System Solutions. We build custom ERP systems, AI agents &amp; automation, online platforms, mobile apps and corporate websites for businesses across India and worldwide.</p>
+      </div>
+      <div><h4>Pages</h4><ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/industries">Who we serve</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div><h4>Resources</h4><ul>
+        <li><a href="/areas-we-serve">Areas we serve</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/custom-erp-guide">Custom ERP guide</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul></div>
+      <div><h4>Services</h4><ul>
+        <li><a href="/services">All Services</a></li>
+        <li><a href="/custom-erp-system">Business &amp; ERP System</a></li>
+        <li><a href="/online-platform-development">Online Platform</a></li>
+        <li><a href="/mobile-app-development">Mobile Application</a></li>
+        <li><a href="/website-design">Website Design</a></li>
+        <li><a href="/ai-agents-automation">AI Agents &amp; Automation</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="https://wa.me/919313512434" target="_blank" rel="noopener">+91 9313512434</a></li>
+        <li><a href="mailto:info.aliradigital@gmail.com">info.aliradigital@gmail.com</a></li>
+        <li><a class="foot-addr" href="https://maps.google.com/?q=Vadodara,+Gujarat,+India" target="_blank" rel="noopener">Vadodara, Gujarat, 390007, India</a></li>
+        <li class="foot-social"><a class="fs-wa" href="https://wa.me/919313512434" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a><a class="fs-fb" href="https://www.facebook.com/AliraDigital" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.6 2 14.4 2 11.9 2 10.2 3.5 10.2 6.3v2.2H7.5v3.7h2.7V22H14v-9.8h2.8l.4-3.7z"/></svg></a></li>
+      </ul></div>
+    </div>
+    <p class="foot-areas"><b>Serving National &amp; International Businesses:</b> India (Vadodara HQ, Mumbai, Bengaluru, Delhi NCR, Ahmedabad, Pune) · United Kingdom (London) · United States (New York) · Canada (Toronto) · Japan (Tokyo) · UAE (Dubai) · Singapore</p>
+    <div class="foot-sign">
+      <span class="eyebrow">Est. 2024 · Vadodara, Gujarat</span>
+      <p class="foot-sign-line" data-split>Your digital transformation <span class="accent">partner.</span></p>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        <span>© <span data-year>2026</span> Alira Digital. All rights reserved.</span>
+        <small>Alira Digital Web &amp; System Solutions</small>
+      </div>
+      <div class="foot-links">
+        <a href="/privacy-policy">Privacy policy</a>
+        <span>Software House in Vadodara, Gujarat · India</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button type="button" aria-label="Close preview">×</button><img alt=""></div>
+</body>
+</html>
