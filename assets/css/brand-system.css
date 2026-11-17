@@ -398,7 +398,158 @@ a[aria-label*="WhatsApp"].float,
   font-weight: 600;
 }
 
-/* ---------- Mobile comfort ---------- */
+/* ---------- Global responsive hardening ---------- */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap,
+.sec-head,
+.lead,
+.muted,
+.work-meta,
+.faq,
+.ans,
+.foot-grid,
+.site-footer {
+  min-width: 0;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+li,
+summary {
+  overflow-wrap: break-word;
+}
+
+.hero .eyebrow {
+  white-space: normal;
+  max-width: 100%;
+}
+
+.btn-row {
+  width: 100%;
+}
+
+.btn-row .btn,
+.btn-row .btn--green,
+.btn-row .btn--soft,
+.btn-row .btn--light {
+  max-width: 100%;
+}
+
+/* Kill desktop work-card stagger on mid widths */
+@media (max-width: 1100px) {
+  .work-card:nth-child(2),
+  .work-card:nth-child(4) {
+    margin-top: 0 !important;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .work-card,
+  .work-card:nth-child(2),
+  .work-card:nth-child(3),
+  .work-card:nth-child(4) {
+    grid-column: auto !important;
+  }
+
+  .foot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    row-gap: 28px;
+  }
+
+  .sx-body {
+    min-width: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    inset: auto !important;
+  }
+}
+
+/* Compact tablet nav before 8 links collide with logo/CTA */
+@media (max-width: 1024px) {
+  .nav-links,
+  .site-header .nav > .btn,
+  .site-header .nav > .btn--green {
+    display: none !important;
+  }
+
+  .burger {
+    display: block !important;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-grid,
+  .contact-grid,
+  .rings,
+  .founder,
+  .web-grid,
+  .ind-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .pad,
+  .pad-sm,
+  main > section.pad {
+    padding-block: clamp(56px, 10vw, 88px);
+  }
+
+  .sec-head {
+    margin-bottom: clamp(28px, 5vw, 40px);
+    max-width: none;
+  }
+
+  .h2,
+  .sec-head .h2 {
+    font-size: clamp(1.7rem, 6.2vw, 2.5rem);
+    max-width: none;
+  }
+
+  .mobile-menu {
+    padding-inline: max(16px, env(safe-area-inset-left))
+      max(16px, env(safe-area-inset-right));
+  }
+
+  .wa-float,
+  .whatsapp-float,
+  a[aria-label*="WhatsApp"].float,
+  .chat-fab {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+}
+
 @media (max-width: 720px) {
   .btn,
   .btn--green,
@@ -409,5 +560,118 @@ a[aria-label*="WhatsApp"].float,
 
   .hero .display {
     max-width: none;
+  }
+
+  .btn-row .btn,
+  .btn-row .btn--green,
+  .btn-row .btn--soft,
+  .btn-row .btn--light {
+    flex: 1 1 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-tags {
+    gap: 8px;
+  }
+
+  .hero-tags .tag,
+  .hero-tags span {
+    white-space: normal;
+  }
+
+  .foot-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .site-header .nav {
+    gap: 10px;
+  }
+
+  .logo .logo-brand {
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: clamp(14px, 4.5vw, 20px);
+  }
+
+  .btn,
+  .btn--green,
+  .btn--soft,
+  .btn--light {
+    padding-inline: 16px;
+    font-size: 0.95rem;
+  }
+
+  .faq summary,
+  .qa summary {
+    font-size: 1rem;
+    line-height: 1.35;
+    padding-right: 36px;
+  }
+
+  .frame,
+  .work-card .frame {
+    border-radius: 16px;
+  }
+
+  .wa-float,
+  .whatsapp-float,
+  a[aria-label*="WhatsApp"].float,
+  .chat-fab {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Case studies + blog articles */
+@media (max-width: 900px) {
+  .cs-hero,
+  .cs-grid,
+  .cs-split,
+  .cs-stats,
+  .pile,
+  .cs-phones,
+  .post-layout,
+  .blog-layout,
+  .article-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .cs-phones,
+  .pile,
+  .device-row {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .post-aside,
+  .toc,
+  .blog-aside {
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-stats {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

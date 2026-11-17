@@ -232,6 +232,13 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1100px) {
+  .svc-block,
+  .industry-story {
+    gap: 28px;
+  }
+}
+
 @media (max-width: 900px) {
   .svc-block,
   .svc-block:nth-child(even),

@@ -131,8 +131,14 @@
   text-decoration: underline;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio-card {
+    padding: 16px;
   }
 }

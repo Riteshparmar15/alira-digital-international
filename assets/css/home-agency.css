@@ -8,10 +8,10 @@
   isolation: isolate;
   overflow: hidden;
   background: var(--color-bg);
-  /* Exact viewport hero so JS dotted shapes + morph label stay on-screen */
-  height: 100svh;
+  /* Fill viewport but allow growth so copy/CTAs never clip on short screens */
   min-height: 100svh;
-  max-height: 100svh;
+  height: auto;
+  max-height: none;
 }
 
 /* Original dotted canvas fills the hero; JS places shapes ~74% right */
@@ -37,8 +37,7 @@
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
   gap: clamp(20px, 3vw, 40px);
   align-items: center;
-  height: 100%;
-  min-height: 0;
+  min-height: calc(100svh - 1px);
   padding-top: clamp(88px, 11vh, 120px);
   padding-bottom: clamp(64px, 9vh, 96px);
   box-sizing: border-box;
@@ -122,9 +121,7 @@
 
 @media (max-width: 900px) {
   .hero--agency {
-    height: auto;
     min-height: 0;
-    max-height: none;
   }
 
   .hero--agency .hero-canvas {
@@ -138,14 +135,18 @@
 
   .hero--agency .hero-grid {
     grid-template-columns: 1fr;
-    height: auto;
-    min-height: auto;
+    min-height: 0;
+    padding-top: clamp(84px, 12vw, 104px);
     padding-bottom: 52px;
   }
 
   .hero--agency .display {
     max-width: none;
-    font-size: clamp(2.15rem, 8.5vw, 3.3rem);
+    font-size: clamp(2rem, 8.5vw, 3.3rem);
+  }
+
+  .hero--agency .lead {
+    max-width: none;
   }
 
   .hero--agency .hero-stage {
@@ -156,7 +157,8 @@
   .hero--agency .hero-slot {
     display: block;
     width: min(88vw, 380px);
-    height: min(64vw, 330px);
+    height: min(52vw, 280px);
+    max-width: 100%;
     margin: 14px auto 10px;
   }
 
@@ -172,6 +174,24 @@
       rgba(242, 243, 247, 0.88) 58%,
       rgba(242, 243, 247, 0.12) 100%
     );
+  }
+}
+
+@media (max-width: 480px) {
+  .hero--agency .hero-slot {
+    height: min(48vw, 220px);
+  }
+
+  .hero--agency .display {
+    font-size: clamp(1.85rem, 9.2vw, 2.45rem);
+  }
+}
+
+@media (max-height: 700px) and (min-width: 901px) {
+  .hero--agency .hero-grid {
+    min-height: 0;
+    padding-top: 96px;
+    padding-bottom: 48px;
   }
 }
 
@@ -278,16 +298,76 @@
   line-height: 1.45;
 }
 
-@media (max-width: 900px) {
+/* Process — previously unstyled */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.process-steps article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: clamp(18px, 2.2vw, 26px);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  min-width: 0;
+}
+
+.process-steps .step-n {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-ink);
+}
+
+.process-steps h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.process-steps p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .agency-grid,
   .price-preview {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 901px) and (max-width: 1100px) {
+@media (max-width: 700px) {
+  .agency-grid,
+  .price-preview,
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card .btn,
+  .price-card .btn--soft,
+  .price-card .btn--green {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1101px) {
   .agency-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -415,16 +495,41 @@ html {
   color: var(--color-text);
   font-weight: 650;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .landing-contact-meta a:hover {
   color: var(--color-primary-ink);
 }
 
+.landing-contact-card .btn,
+.landing-contact-card .btn--soft,
+.landing-contact-card .btn--green {
+  width: fit-content;
+  max-width: 100%;
+}
+
 @media (max-width: 900px) {
   .landing-contact,
   .landing-contact-meta {
     grid-template-columns: 1fr;
+  }
+
+  .landing-contact-card .btn,
+  .landing-contact-card .btn--soft,
+  .landing-contact-card .btn--green {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-contact-card,
+  .agency-card,
+  .price-card,
+  .process-steps article {
+    padding: 18px 16px;
   }
 }
 
@@ -546,11 +651,20 @@ html {
   .industry-motion-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .industry-tile {
+    padding: 18px 16px;
+  }
 }
 
 @media (max-width: 560px) {
   .industry-motion-grid {
     grid-template-columns: 1fr;
+  }
+
+  .industry-note {
+    text-align: left;
+    padding-inline: 2px;
   }
 }
 
