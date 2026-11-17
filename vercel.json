@@ -1,6 +1,27 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/services", "destination": "/#services", "permanent": false },
+    { "source": "/services/:path*", "destination": "/#services", "permanent": false },
+    { "source": "/industries", "destination": "/#industries", "permanent": false },
+    { "source": "/industries/:path*", "destination": "/#industries", "permanent": false },
+    { "source": "/projects", "destination": "/#work", "permanent": false },
+    { "source": "/projects/:path*", "destination": "/#work", "permanent": false },
+    { "source": "/pricing", "destination": "/#pricing", "permanent": false },
+    { "source": "/about-us", "destination": "/#about", "permanent": false },
+    { "source": "/contact", "destination": "/#contact", "permanent": false },
+    { "source": "/faq", "destination": "/#faq", "permanent": false },
+    { "source": "/areas-we-serve", "destination": "/#industries", "permanent": false },
+    { "source": "/website-design", "destination": "/#services", "permanent": false },
+    { "source": "/custom-erp-system", "destination": "/#services", "permanent": false },
+    { "source": "/custom-erp-guide", "destination": "/#services", "permanent": false },
+    { "source": "/online-platform-development", "destination": "/#services", "permanent": false },
+    { "source": "/mobile-app-development", "destination": "/#services", "permanent": false },
+    { "source": "/ai-agents-automation", "destination": "/#services", "permanent": false },
+    { "source": "/blog", "destination": "/#top", "permanent": false },
+    { "source": "/blog/:path*", "destination": "/#top", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -12,9 +33,21 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/img/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
@@ -29,5 +62,9 @@
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]
 }
