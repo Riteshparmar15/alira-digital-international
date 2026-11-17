@@ -57,7 +57,7 @@
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/css/design-tokens.css">
 <link rel="stylesheet" href="/assets/css/brand-system.css">
-<link rel="stylesheet" href="/assets/css/home-agency.css?v=13">
+<link rel="stylesheet" href="/assets/css/home-agency.css?v=14">
   <script src="/local-demo.js?v=9"></script>
   </head>
 
@@ -82,14 +82,15 @@
       <a class="logo" href="#top" aria-label="Alira Digital home"><img class="logo-brand"
           src="/assets/img/alira-pro-1-dark.svg" alt="Alira Digital" width="200" height="48"
           style="height:34px;width:auto;display:block;margin:0"></a>
-      <ul class="nav-links">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-links" data-flow-nav>
+        <li><a href="#top" data-flow="top">Home</a></li>
+        <li><a href="#services" data-flow="services">Services</a></li>
+        <li><a href="#industries" data-flow="industries">Industries</a></li>
+        <li><a href="#work" data-flow="work">Work</a></li>
+        <li><a href="#process" data-flow="process">Process</a></li>
+        <li><a href="#pricing" data-flow="pricing">Pricing</a></li>
+        <li><a href="#about" data-flow="about">About</a></li>
+        <li><a href="#contact" data-flow="contact">Contact</a></li>
       </ul>
       <a class="btn btn--green" href="#contact" data-magnetic>Get a Free Quote <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
       <button class="burger" type="button" aria-label="Open menu" aria-expanded="false"
@@ -97,14 +98,15 @@
     </nav>
   </header>
   <div class="mobile-menu" id="mobileMenu" data-lenis-prevent>
-    <ul>
-      <li><a class="mm-link" href="#top"><small>01</small>Home</a></li>
-      <li><a class="mm-link" href="#services"><small>02</small>Services</a></li>
-      <li><a class="mm-link" href="#industries"><small>03</small>Industries</a></li>
-      <li><a class="mm-link" href="#work"><small>04</small>Work</a></li>
-      <li><a class="mm-link" href="#pricing"><small>05</small>Pricing</a></li>
-      <li><a class="mm-link" href="#about"><small>06</small>About</a></li>
-      <li><a class="mm-link" href="#contact"><small>07</small>Contact</a></li>
+    <ul data-flow-nav>
+      <li><a class="mm-link" href="#top" data-flow="top"><small>01</small>Home</a></li>
+      <li><a class="mm-link" href="#services" data-flow="services"><small>02</small>Services</a></li>
+      <li><a class="mm-link" href="#industries" data-flow="industries"><small>03</small>Industries</a></li>
+      <li><a class="mm-link" href="#work" data-flow="work"><small>04</small>Work</a></li>
+      <li><a class="mm-link" href="#process" data-flow="process"><small>05</small>Process</a></li>
+      <li><a class="mm-link" href="#pricing" data-flow="pricing"><small>06</small>Pricing</a></li>
+      <li><a class="mm-link" href="#about" data-flow="about"><small>07</small>About</a></li>
+      <li><a class="mm-link" href="#contact" data-flow="contact"><small>08</small>Contact</a></li>
     </ul>
     <div class="mm-foot">
       <span>Website Design &amp; Development · International clients</span>
@@ -113,6 +115,17 @@
       <div class="foot-social"><a class="fs-wa" href="https://wa.me/919313512434" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a></div>
     </div>
   </div>
+  <nav class="flow-rail" aria-label="Page sections" data-flow-rail>
+    <a href="#top" data-flow="top" aria-label="Home"><i></i></a>
+    <a href="#services" data-flow="services" aria-label="Services"><i></i></a>
+    <a href="#industries" data-flow="industries" aria-label="Industries"><i></i></a>
+    <a href="#work" data-flow="work" aria-label="Work"><i></i></a>
+    <a href="#process" data-flow="process" aria-label="Process"><i></i></a>
+    <a href="#pricing" data-flow="pricing" aria-label="Pricing"><i></i></a>
+    <a href="#about" data-flow="about" aria-label="About"><i></i></a>
+    <a href="#faq" data-flow="faq" aria-label="FAQ"><i></i></a>
+    <a href="#contact" data-flow="contact" aria-label="Contact"><i></i></a>
+  </nav>
   <main id="main">
 
     <section class="hero hero--agency" id="top">
@@ -144,7 +157,7 @@
       <div class="wrap" style="position:relative;display:grid;gap:28px">
         <span class="eyebrow" data-reveal>What we do</span>
         <p class="statement" data-highlight>We design and develop modern, high-performing websites that help small businesses <em>build trust</em>, attract customers and <em>grow online</em>.</p>
-        <div data-reveal><a class="link-arrow" href="#about">More about Alira Digital <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+        <div data-reveal><a class="link-arrow" href="#services">See our website services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
       </div>
     </section>
 
@@ -194,37 +207,6 @@
           </article>
         </div>
         <p style="margin-top:40px;text-align:center" data-reveal><a class="btn btn--soft" href="#contact" data-magnetic>Request a quote <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span></a></p>
-      </div>
-    </section>
-
-    <section class="pad on-dark" data-glow style="overflow:hidden" id="about">
-      <div class="dark-dots"></div>
-      <div class="wrap" style="position:relative">
-        <div class="sec-head">
-          <span class="eyebrow">Why Alira Digital</span>
-          <h2 class="h2" data-split>A website partner focused on enquiries.</h2>
-          <p class="muted">Premium design, clear communication and conversion-minded structure — without invented claims or cookie-cutter templates.</p>
-        </div>
-        <div class="on-dark-rings">
-          <div class="rings">
-            <div class="rings-line" data-draw><i></i></div>
-            <div class="ring-item" data-reveal>
-              <div class="ring-num"><b>01</b></div>
-              <h3>Built for small businesses</h3>
-              <p>Messaging and layouts designed for cleaning, plumbing, landscaping, home services and professional firms.</p>
-            </div>
-            <div class="ring-item" data-reveal>
-              <div class="ring-num"><b>02</b></div>
-              <h3>Conversion-first structure</h3>
-              <p>Every page is organised to guide visitors toward a quote request, call or WhatsApp message.</p>
-            </div>
-            <div class="ring-item" data-reveal>
-              <div class="ring-num"><b>03</b></div>
-              <h3>Clear delivery process</h3>
-              <p>Transparent scopes, starting prices and regular updates from brief to launch.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -299,7 +281,7 @@
             </div>
           </a>
         </div>
-        <p style="margin-top:48px;text-align:center" data-reveal><a class="btn btn--soft" href="#work" data-magnetic>Explore Our Work <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span></a></p>
+        <p style="margin-top:48px;text-align:center" data-reveal><a class="btn btn--soft" href="#process" data-magnetic>See how we work <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span></a></p>
       </div>
     </section>
 
@@ -380,6 +362,38 @@
         <p class="muted" style="margin-top:28px;text-align:center" data-reveal>Need something custom? <a class="text-link" href="#contact">Request a tailored quotation</a>.</p>
       </div>
     </section>
+
+    <section class="pad on-dark" data-glow style="overflow:hidden" id="about">
+      <div class="dark-dots"></div>
+      <div class="wrap" style="position:relative">
+        <div class="sec-head">
+          <span class="eyebrow">Why Alira Digital</span>
+          <h2 class="h2" data-split>A website partner focused on enquiries.</h2>
+          <p class="muted">Premium design, clear communication and conversion-minded structure — without invented claims or cookie-cutter templates.</p>
+        </div>
+        <div class="on-dark-rings">
+          <div class="rings">
+            <div class="rings-line" data-draw><i></i></div>
+            <div class="ring-item" data-reveal>
+              <div class="ring-num"><b>01</b></div>
+              <h3>Built for small businesses</h3>
+              <p>Messaging and layouts designed for cleaning, plumbing, landscaping, home services and professional firms.</p>
+            </div>
+            <div class="ring-item" data-reveal>
+              <div class="ring-num"><b>02</b></div>
+              <h3>Conversion-first structure</h3>
+              <p>Every page is organised to guide visitors toward a quote request, call or WhatsApp message.</p>
+            </div>
+            <div class="ring-item" data-reveal>
+              <div class="ring-num"><b>03</b></div>
+              <h3>Clear delivery process</h3>
+              <p>Transparent scopes, starting prices and regular updates from brief to launch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="pad" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq-grid">
@@ -490,18 +504,20 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#industries">Industries</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>Resources</h4>
           <ul>
-            <li><a href="#industries">Areas we serve</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#process">Process</a></li>
             <li><a href="#work">Selected work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
@@ -587,19 +603,81 @@
 
 <script>
 (function () {
+  var FLOW = ['top', 'services', 'industries', 'work', 'process', 'pricing', 'about', 'faq', 'contact'];
+
+  function closeMobile() {
+    var menu = document.getElementById('mobileMenu');
+    var burger = document.querySelector('.burger');
+    if (menu) menu.classList.remove('open');
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'false');
+      burger.classList.remove('is-open');
+    }
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+  }
+
   document.querySelectorAll('.mm-link[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      var menu = document.getElementById('mobileMenu');
-      var burger = document.querySelector('.burger');
-      if (menu) menu.classList.remove('open');
-      if (burger) {
-        burger.setAttribute('aria-expanded', 'false');
-        burger.classList.remove('is-open');
-      }
-      document.documentElement.classList.remove('menu-open');
-      document.body.classList.remove('menu-open');
+    a.addEventListener('click', closeMobile);
+  });
+
+  function setActive(id) {
+    document.querySelectorAll('[data-flow]').forEach(function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-flow') === id);
+    });
+  }
+
+  function scrollToId(id, push) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var header = document.querySelector('.site-header');
+    var offset = header ? header.offsetHeight + 12 : 96;
+    var lenis = window.lenis || window.__lenis || null;
+    if (lenis && typeof lenis.scrollTo === 'function') {
+      lenis.scrollTo(el, { offset: -offset, duration: 1.05 });
+    } else {
+      var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+    if (push !== false) {
+      try { history.pushState(null, '', '#' + id); } catch (e) {}
+    }
+    setActive(id);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var href = a.getAttribute('href') || '';
+      if (href.length < 2) return;
+      var id = href.slice(1);
+      if (!document.getElementById(id)) return;
+      e.preventDefault();
+      closeMobile();
+      scrollToId(id, true);
     });
   });
+
+  var sections = FLOW.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var current = 'top';
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        current = entry.target.id;
+        setActive(current);
+      });
+    }, { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 });
+    sections.forEach(function (sec) { spy.observe(sec); });
+  }
+
+  if (location.hash && location.hash.length > 1) {
+    var boot = location.hash.slice(1);
+    if (document.getElementById(boot)) {
+      setTimeout(function () { scrollToId(boot, false); }, 60);
+    }
+  } else {
+    setActive('top');
+  }
 
   var grid = document.querySelector('[data-industry-grid]');
   if (!grid) return;

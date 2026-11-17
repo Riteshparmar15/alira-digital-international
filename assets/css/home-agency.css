@@ -291,12 +291,13 @@
   }
 }
 
-/* One-page landing: sticky-header offset + contact block */
+/* One-page landing: sequential flow + sticky-header offset */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
 
+#top,
 #services,
 #about,
 #industries,
@@ -306,6 +307,58 @@ html {
 #faq,
 #contact {
   scroll-margin-top: 96px;
+}
+
+.nav-links a.is-active,
+.mobile-menu a.is-active {
+  color: var(--color-primary-ink);
+}
+
+.flow-rail {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  z-index: 40;
+  display: grid;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.flow-rail a {
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.flow-rail a i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-text-muted) 55%, transparent);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.flow-rail a.is-active i,
+.flow-rail a:hover i {
+  background: var(--color-primary-ink);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent);
+}
+
+@media (max-width: 1100px) {
+  .flow-rail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 .landing-contact {
