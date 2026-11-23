@@ -383,7 +383,8 @@ a[aria-label*="WhatsApp"].float,
   box-shadow: var(--shadow-sm);
 }
 
-.badge-demo {
+.badge-demo,
+.badge-live {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -396,6 +397,11 @@ a[aria-label*="WhatsApp"].float,
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.badge-live {
+  background: color-mix(in srgb, var(--color-primary) 14%, white);
+  color: var(--color-primary-ink);
 }
 
 /* ---------- Global responsive hardening ---------- */
