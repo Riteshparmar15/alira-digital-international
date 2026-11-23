@@ -7,7 +7,9 @@
   <meta name="description" content="Demo Project by Alira Digital: a fictional cleaning company website showing residential and commercial services, service areas, sample testimonials and a quote request form.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/demos/bright-home-cleaning/styles.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="demo-banner">
@@ -26,7 +28,9 @@
         <li><a href="#areas">Areas</a></li>
       </ul>
       <a class="btn btn-primary" href="#quote">Request a Quote</a>
-      <button class="burger" type="button" aria-label="Open menu" hidden>Menu</button>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
   </header>
 
@@ -224,6 +228,22 @@
   </footer>
 
   <script>
+    var burger = document.querySelector('.burger');
+    var navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.removeAttribute('hidden');
+      burger.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', String(open));
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
     document.getElementById('demo-quote').addEventListener('submit', function (e) {
       e.preventDefault();
       var form = e.target;
